@@ -16,18 +16,8 @@ import {
 } from "lucide-react";
 import "./index.css";
 
-// Componente Ensō personalizado
 const EnsoLogo = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M20 50C20 33.4315 33.4315 20 50 20C66.5685 20 80 33.4315 80 50C80 66.5685 66.5685 80 50 80C40 80 32 72 32 62"
-      stroke="currentColor"
-      strokeWidth="3"
-      strokeLinecap="round"
-      fill="none"
-      opacity="0.9"
-    />
-  </svg>
+  <img src="/enso.png" alt="Logo" className={className} />
 );
 
 // Componente para efectos de agua acuarela
