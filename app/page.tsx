@@ -150,7 +150,7 @@ export default function ITConsultingLanding() {
                   alt="IT Consulting team"
                   className="aspect-video overflow-hidden rounded-xl object-cover shadow-lg"
                   height="400"
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/bg-1.webp?height=400&width=600"
                   width="600"
                 />
               </div>
@@ -289,7 +289,7 @@ export default function ITConsultingLanding() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-400">
+                  <ul className="space-y-2 text-sm text-gray-300">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
                       24/7 monitoring

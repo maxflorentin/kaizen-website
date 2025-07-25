@@ -116,7 +116,7 @@ function App() {
                     View our services
                   </a>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-4 text-sm text-gray-700">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span>24/7 Support</span>
@@ -136,7 +136,7 @@ function App() {
                   alt="IT Consulting team"
                   className="aspect-video overflow-hidden rounded-xl object-cover shadow-lg"
                   height="400"
-                  src="/placeholder.svg"
+                  src="/bg-1.webp"
                   width="600"
                 />
               </div>
@@ -278,7 +278,7 @@ function App() {
                   alt="Team collaboration"
                   className="aspect-video overflow-hidden rounded-xl object-cover shadow-lg"
                   height="400"
-                  src="/placeholder.svg"
+                  src="/bg-3.webp"
                   width="550"
                 />
               </div>
