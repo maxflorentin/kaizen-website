@@ -13,7 +13,10 @@ import {
   Cpu,
   Globe,
   BarChart3,
+  Smartphone,
+  Sprout,
 } from "lucide-react";
+import CaseLahuen from "./CaseLahuen";
 import "./index.css";
 
 const EnsoLogo = ({ className }: { className?: string }) => (
@@ -59,6 +62,16 @@ const WaterEffect = () => {
 };
 
 function App() {
+  const [route, setRoute] = useState(window.location.hash);
+
+  useEffect(() => {
+    const onHash = () => { setRoute(window.location.hash); window.scrollTo(0, 0); };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  if (route === "#case-lahuen") return <CaseLahuen />;
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 relative overflow-hidden">
       <WaterEffect />
@@ -71,6 +84,9 @@ function App() {
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <a className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors" href="#services">
             Services
+          </a>
+          <a className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors" href="#cases">
+            Cases
           </a>
           <a className="text-sm font-medium text-gray-300 hover:text-red-400 transition-colors" href="#about">
             About
@@ -106,7 +122,7 @@ function App() {
                     View our services
                   </a>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-gray-700">
+                <div className="flex items-center gap-4 text-sm text-gray-200">
                   <div className="flex items-center gap-1">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span>24/7 Support</span>
@@ -220,6 +236,53 @@ function App() {
                   <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-green-400" /> Risk assessment</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Case Studies Section */}
+        <section id="cases" className="w-full py-12 md:py-24 lg:py-32 bg-gray-800 relative z-10">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <span className="inline-block border border-red-400 text-red-400 rounded px-2 py-1 text-xs font-semibold">Case Studies</span>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">
+                Real problems, real solutions
+              </h2>
+              <p className="max-w-[600px] text-gray-300 md:text-xl/relaxed">
+                See how we apply Kaizen principles to deliver lean, purpose-built software.
+              </p>
+            </div>
+            <div className="mx-auto max-w-3xl">
+              <a
+                href="#case-lahuen"
+                className="group block bg-gray-900 border border-gray-700 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-green-500/10 transition-all"
+              >
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sprout className="h-5 w-5 text-green-400" />
+                    <span className="text-xs font-semibold text-green-400 uppercase tracking-wider">Cooperative</span>
+                  </div>
+                  <h3 className="text-white text-xl md:text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors">
+                    Lahuen: from spreadsheets to a unified digital platform
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    A mobile-first PWA for stock management, point of sale, CRM, and production tracking
+                    — built to work offline at street fairs.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["TypeScript", "Firebase", "PWA", "Gemini AI", "Mercado Pago"].map(tag => (
+                      <span key={tag} className="bg-gray-800 border border-gray-700 rounded-full px-2 py-0.5 text-xs text-gray-400">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-4 text-sm">
+                    <span className="flex items-center gap-1 text-gray-300"><Smartphone className="h-4 w-4 text-green-400" /> Mobile-first</span>
+                    <span className="flex items-center gap-1 text-gray-300"><CheckCircle className="h-4 w-4 text-green-400" /> 5 modules</span>
+                    <span className="text-red-400 font-semibold ml-auto group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                      Read case study <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </section>
